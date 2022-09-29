@@ -6,6 +6,7 @@ import {  Videos } from "./";
 const SearchFeed = () => {
   const [videos, setVideos] = useState([]);
   const {searchTerm} =useParams();
+  console.log(searchTerm);
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${searchTerm}`).then((data) => {
@@ -22,7 +23,7 @@ const SearchFeed = () => {
           sx={{ color: "white" }}
         >
           Search Results for: <span style={{ color: "#f31503" }}>
-            {searchTerm}</span>  videos
+            {searchTerm} </span>  videos
         </Typography>
         <Videos videos={videos} />
       </Box>
